@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Imágenes - Normas APA 7</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header>
+    <video autoplay muted loop>
+        <source src="ambato.mp4" type="video/mp4">
+    </video>
+    <div class="header-text">
+        <h1>Galería de Imágenes</h1>
+        <p>Normas APA 7ª edición - Proyecto de Grado</p>
+    </div>
+</header>
+
+<!-- Música -->
+<div class="musica-box">
+    <p>¿Deseas escuchar música de fondo? 🎵</p>
+    <button onclick="activarMusica()">Sí</button>
+    <button onclick="desactivarMusica()">No</button>
+</div>
+
+<audio id="musica" loop>
+    <source src="MUSICA.mp4" type="audio/mpeg">
+</audio>
+
+<!-- Navegación -->
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="explicacion.html">Explicación</a>
+    <a href="videos.html">Videos</a>
+    <a href="imagenes.html" class="activo">Imágenes</a>
+    <a href="juego.html">Juego</a>
+    <a href="conclusion.html">Conclusión</a>
+</nav>
+
+<!-- Sección de imágenes -->
+<section>
+    <h2>Galería de Imágenes</h2>
+    <img src="imi.jpeg" alt="Descripción de la imagen 1">
+    <img src="id.jpeg" alt="Descripción de la imagen 2">
+    <img src="normas-apa.jpg" alt="Descripción de la imagen 3">
+    <img src="IMAGEN1.png" alt="Descripción de la imagen 3">
+    <img src="IMAGENES.webp" alt="Descripción de la imagen 3">
+    <img src="IMG.jpg" alt="Descripción de la imagen 3">
+</section>
+
+<footer>Proyecto de Grado 2026 💖</footer>
+
+<!-- Script de música -->
+<script>
+const audio = document.getElementById("musica");
+
+// Activar música
+function activarMusica(){
+    audio.play();
+    localStorage.setItem("musica","on");
+}
+
+// Desactivar música
+function desactivarMusica(){
+    audio.pause();
+    localStorage.setItem("musica","off");
+}
+
+// Mantener estado al recargar la página
+window.onload = () => {
+    const estado = localStorage.getItem("musica");
+    if(estado === "on"){
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+

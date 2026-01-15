@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Explicación - Normas APA 7</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header>
+    <video autoplay muted loop>
+        <source src="ambato.mp4" type="video/mp4">
+    </video>
+    <div class="header-text">
+        <h1>Explicación de las Normas APA 7ª Edición</h1>
+        <p>Proyecto de Grado - Nahomi Medina</p>
+    </div>
+</header>
+
+<!-- Música -->
+<div class="musica-box">
+    <p>¿Deseas escuchar música de fondo? 🎵</p>
+    <button onclick="activarMusica()">Sí</button>
+    <button onclick="desactivarMusica()">No</button>
+</div>
+
+<audio id="musica" loop>
+    <source src="MUSICA.mp4" type="audio/mpeg">
+</audio>
+
+<!-- Navegación -->
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="explicacion.html" class="activo">Explicación</a>
+    <a href="videos.html">Videos</a>
+    <a href="imagenes.html">Imágenes</a>
+    <a href="juego.html">Juego</a>
+    <a href="conclusion.html">Conclusión</a>
+</nav>
+
+<!-- Sección de explicación -->
+<section>
+    <h2>¿Qué son las Normas APA?</h2>
+    <p>
+        Las Normas APA séptima edición constituyen un conjunto de reglas que orientan la presentación de trabajos académicos, garantizando orden, claridad y respeto por los derechos de autor. Estas normas se aplican en investigaciones, informes, ensayos y proyectos escolares, permitiendo que la información sea presentada de forma correcta y comprensible.
+El uso adecuado de las Normas APA facilita la organización de ideas, la correcta citación de fuentes y la elaboración de referencias bibliográficas confiables. Gracias a estas normas, los trabajos escritos adquieren un formato profesional, lo que contribuye al desarrollo de habilidades de redacción y responsabilidad académica en los estudiantes.
+Asimismo, conocer y aplicar correctamente las Normas APA ayuda a evitar el plagio, ya que enseña a reconocer el trabajo de otros autores y a darles el crédito correspondiente. Este aspecto es fundamental dentro del proceso educativo, pues fomenta valores como la honestidad, el respeto y el compromiso con el aprendizaje.
+En la actualidad, el uso de estas normas no solo se limita a la educación superior, sino que también forma parte del proceso formativo de los estudiantes de bachillerato, quienes deben adquirir estos conocimientos desde etapas tempranas para fortalecer su desempeño académico.
+En conclusión, las Normas APA representan una herramienta esencial en la formación de estudiantes responsables y competentes, capaces de presentar trabajos escritos con calidad, precisión y ética académica.
+    </p>
+    <p>
+        Incluyen pautas para la redacción, el formato de referencias, citas dentro del texto,
+        tablas, figuras y más, asegurando coherencia y profesionalismo en los trabajos.
+    </p>
+</section>
+
+<footer>Proyecto de Grado 2026 💖</footer>
+
+<!-- Script de música -->
+<script>
+const audio = document.getElementById("musica");
+
+function activarMusica(){
+    audio.play();
+    localStorage.setItem("musica","on");
+    document.querySelector(".musica-box").style.display="none";
+}
+
+function desactivarMusica(){
+    audio.pause();
+    localStorage.setItem("musica","off");
+    document.querySelector(".musica-box").style.display="none";
+}
+
+window.onload = () =>{
+    const estado = localStorage.getItem("musica");
+    if(estado === "on"){
+        audio.play();
+        document.querySelector(".musica-box").style.display="none";
+    }
+}
+</script>
+
+</body>
+</html>

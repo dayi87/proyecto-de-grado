@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Conclusión - Normas APA 7</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header>
+    <video autoplay muted loop>
+        <source src="ambato.mp4" type="video/mp4">
+    </video>
+
+    <div class="header-text">
+        <h1>Conclusión de las Normas APA 7ª Edición</h1>
+        <p>Proyecto de Grado - Nahomi Medina</p>
+    </div>
+</header>
+
+<!-- Música -->
+<div class="musica-box">
+    <p>¿Deseas escuchar música de fondo? 🎵</p>
+    <button onclick="activarMusica()">Sí</button>
+    <button onclick="desactivarMusica()">No</button>
+</div>
+
+<audio id="musica" loop>
+    <source src="MUSICA.mp4" type="audio/mpeg">
+</audio>
+
+<!-- Navegación -->
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="explicacion.html">Explicación</a>
+    <a href="videos.html">Videos</a>
+    <a href="imagenes.html">Imágenes</a>
+    <a href="juego.html">Juego</a>
+    <a href="conclusion.html" class="activo">Conclusión</a>
+</nav>
+
+<!-- Sección de conclusión -->
+<section>
+    <h2>Conclusión</h2>
+    <p>
+        El desarrollo de la página web “APA Interactiva” permitió integrar la tecnología con el aprendizaje de las Normas APA séptima edición, ofreciendo a los estudiantes una herramienta innovadora, dinámica y fácil de utilizar. A través de sus secciones de inicio, explicación, videos, imágenes y juegos interactivos, la plataforma logra reforzar los conocimientos teóricos y prácticos necesarios para la correcta elaboración de trabajos académicos.
+Este proyecto demuestra que el uso de recursos digitales favorece el interés y la participación de los estudiantes, ya que transforma un contenido que suele considerarse complejo en una experiencia más atractiva. Gracias a la interactividad de la página, los usuarios pueden practicar, cometer errores y aprender de ellos mediante la retroalimentación inmediata que ofrece el sistema.
+Asimismo, la estructura de la plataforma permite que el aprendizaje sea progresivo, facilitando la comprensión de las citas, referencias y demás elementos fundamentales de las Normas APA. La posibilidad de utilizar la página en repetidas ocasiones contribuye a fortalecer el conocimiento y mejorar el desempeño académico de los estudiantes.
+En conclusión, la página web “APA Interactiva” constituye un recurso educativo valioso que combina creatividad, tecnología y educación, aportando al proceso formativo de los estudiantes y promoviendo el uso correcto de las Normas APA en sus trabajos escolares.
+    </p>
+    <p>
+        Aplicar correctamente estas normas nos prepara para cualquier trabajo académico
+        futuro y asegura que nuestras referencias sean precisas y confiables.
+    </p>
+</section>
+
+<footer>
+    Proyecto de Grado 2026 💖
+</footer>
+
+<!-- Script de música -->
+<script>
+const audio = document.getElementById("musica");
+
+// Activar música
+function activarMusica(){
+    audio.play();
+    localStorage.setItem("musica","on");
+}
+
+// Desactivar música
+function desactivarMusica(){
+    audio.pause();
+    localStorage.setItem("musica","off");
+}
+
+// Mantener estado al recargar la página
+window.onload = () => {
+    const estado = localStorage.getItem("musica");
+    if(estado === "on"){
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+</script>
+
+</body>
+</html>
